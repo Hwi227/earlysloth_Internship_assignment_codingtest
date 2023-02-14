@@ -40,7 +40,9 @@ const arr = [
   [1, 0, 0, 0, 0],
 ]
 
-const solution = arr => {}
+const solution = arr => {
+   return arr.map(value => value.reverse());
+}
 
 const answer = solution(arr)
 // [

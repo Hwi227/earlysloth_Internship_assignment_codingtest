@@ -16,7 +16,9 @@
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-const solution = (arr) => {};
+const solution = (arr) => {
+  return arr.map(num => arr.indexOf(num) % 2 ? num : num * 2);
+};
 
 const answer = solution(arr);
 
