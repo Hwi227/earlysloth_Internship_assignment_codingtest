@@ -104,7 +104,20 @@ const brand = [
   },
 ]
 
-const solution = (menus, brand) => {}
+const solution = (menus, brand) => {
+  return menus.filter(menus => menus.category === 'espresso').map((data, index) => {
+    data.id = index + 1;
+    
+    const filteredBrandObj = brand.filter(brand => brand.bestMenu === data.name);
+    data.brand = filteredBrandObj[0].brand;
+    data.bestMenu = filteredBrandObj[0].bestMenu;
+    data.rate = filteredBrandObj[0].rate;
+    delete data.name;
+    delete data.size;
+
+    return data;
+  });
+}
 
 const answer = solution(menus, brand)
 
