@@ -108,10 +108,10 @@ const solution = (menus, brand) => {
   return menus.filter(menus => menus.category === 'espresso').map((data, index) => {
     data.id = index + 1;
     
-    const filteredBrandObj = brand.filter(brand => brand.bestMenu === data.name);
-    data.brand = filteredBrandObj[0].brand;
-    data.bestMenu = filteredBrandObj[0].bestMenu;
-    data.rate = filteredBrandObj[0].rate;
+    const [filteredBrandObj] = brand.filter(brand => brand.bestMenu === data.name);
+    data.brand = filteredBrandObj.brand;
+    data.bestMenu = filteredBrandObj.bestMenu;
+    data.rate = filteredBrandObj.rate;
     delete data.name;
     delete data.size;
 
